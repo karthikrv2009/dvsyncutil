@@ -4,10 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "data_sync_progress")
+
 public class DataSyncProgress {
 
     @Id
