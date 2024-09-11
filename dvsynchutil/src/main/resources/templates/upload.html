@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Upload Log Files</title>
+  </head>
+  <body>
+    <h1>Upload Log Files</h1>
+    <form action="/upload" method="post">
+      <label for="modelPath">Model JSON Path:</label><br />
+      <input type="text" id="modelPath" name="modelPath" /><br /><br />
+      <label for="logPath">Synapse Log Path:</label><br />
+      <input type="text" id="logPath" name="logPath" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
