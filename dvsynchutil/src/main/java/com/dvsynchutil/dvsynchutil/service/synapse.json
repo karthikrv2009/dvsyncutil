@@ -1,0 +1,6 @@
+2024-09-10T12:01:25Z | INSERT | account | {"accountid": "acc-001", "name": "Contoso Ltd.", "telephone1": "123-456-7890", "address1_city": "Seattle"}
+2024-09-10T12:02:15Z | INSERT | contact | {"contactid": "con-001", "firstname": "John", "lastname": "Doe", "emailaddress1": "john.doe@contoso.com", "accountid": "acc-001"}
+2024-09-10T12:05:30Z | UPDATE | account | {"accountid": "acc-001", "telephone1": "987-654-3210"}
+2024-09-10T12:10:00Z | DELETE | contact | {"contactid": "con-001"}
+2024-09-10T12:15:45Z | INSERT | account | {"accountid": "acc-002", "name": "Northwind Traders", "telephone1": "555-123-4567", "address1_city": "New York"}
+2024-09-10T12:20:10Z | UPDATE | contact | {"contactid": "con-001", "firstname": "Jonathan"}

@@ -1,0 +1,107 @@
+{
+  "solution": {
+    "name": "SampleSolution",
+    "version": "1.0.0",
+    "publisher": {
+      "name": "ContosoPublisher",
+      "uniqueName": "contoso"
+    }
+  },
+  "entities": [
+    {
+      "logicalName": "account",
+      "displayName": "Account",
+      "pluralName": "Accounts",
+      "description": "An account represents a company or a customer.",
+      "attributes": [
+        {
+          "logicalName": "accountid",
+          "displayName": "Account ID",
+          "type": "guid",
+          "isPrimaryKey": true
+        },
+        {
+          "logicalName": "name",
+          "displayName": "Account Name",
+          "type": "string",
+          "maxLength": 100,
+          "isRequired": true
+        },
+        {
+          "logicalName": "telephone1",
+          "displayName": "Phone",
+          "type": "string",
+          "maxLength": 50,
+          "isRequired": false
+        },
+        {
+          "logicalName": "address1_city",
+          "displayName": "City",
+          "type": "string",
+          "maxLength": 50
+        },
+        {
+          "logicalName": "createdon",
+          "displayName": "Created On",
+          "type": "datetime",
+          "isReadOnly": true
+        }
+      ],
+      "relationships": [
+        {
+          "type": "OneToMany",
+          "relatedEntity": "contact",
+          "relatedAttribute": "accountid",
+          "relationshipName": "account_primary_contact"
+        }
+      ]
+    },
+    {
+      "logicalName": "contact",
+      "displayName": "Contact",
+      "pluralName": "Contacts",
+      "description": "A contact represents an individual associated with an account.",
+      "attributes": [
+        {
+          "logicalName": "contactid",
+          "displayName": "Contact ID",
+          "type": "guid",
+          "isPrimaryKey": true
+        },
+        {
+          "logicalName": "firstname",
+          "displayName": "First Name",
+          "type": "string",
+          "maxLength": 50
+        },
+        {
+          "logicalName": "lastname",
+          "displayName": "Last Name",
+          "type": "string",
+          "maxLength": 50,
+          "isRequired": true
+        },
+        {
+          "logicalName": "emailaddress1",
+          "displayName": "Email",
+          "type": "string",
+          "maxLength": 100
+        },
+        {
+          "logicalName": "accountid",
+          "displayName": "Account",
+          "type": "lookup",
+          "relatedEntity": "account"
+        }
+      ],
+      "relationships": [
+        {
+          "type": "ManyToOne",
+          "relatedEntity": "account",
+          "relatedAttribute": "accountid",
+          "relationshipName": "contact_account"
+        }
+      ]
+    }
+  ]
+}
